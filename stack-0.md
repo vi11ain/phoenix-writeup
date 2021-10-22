@@ -104,7 +104,7 @@ Breakpoint 1 at 0x4005e1
 
 Now we can run the executable.
 
-![](/images/stack-zero/0.png)
+![](/images/stack-0/0.png)
 Notice we approach the first call to `puts()`.
 
 Add a breakpoint to after the call and continue until it.
@@ -113,7 +113,7 @@ Add a breakpoint to after the call and continue until it.
 Breakpoint 6 at 0x4005f6
 ```
 
-![](/images/stack-zero/1.png)
+![](/images/stack-0/1.png)
 1. `0` is written to the `dword` (4 bytes) pointed by `[rbp-0x10]`, on the stack, this is `locals.changeme`
 2. The address of `[rbp-0x50]`, `locals.buffer`, is moved to the register `rdi` (by convention in x64, this register acts as the first integer/pointer parameter to a function)
 3. `gets(locals.buffer)` is called
@@ -121,7 +121,7 @@ Breakpoint 6 at 0x4005f6
 
 Use `GEF`'s `hexdump` to see the value of our variables in the stack.
 
-![](/images/stack-zero/2.png)
+![](/images/stack-0/2.png)
 
 ### Breaking it
 
@@ -149,7 +149,7 @@ Breakpoint 7 at 0x400609
 
 Now `hexdump` once again just to check our input worked as expected.
 
-![](/images/stack-zero/3.png)
+![](/images/stack-0/3.png)
 
 Continue (`c`) to let the program resume execution.
 ```console
