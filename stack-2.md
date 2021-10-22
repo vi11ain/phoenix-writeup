@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
 ```
 
 ## Challenge
-The aim is to change the contents of the changeme variable to 0x0d0a090a
+The aim is to change the contents of the `changeme` variable to `0x0d0a090a`.
 
 ## Solution
 Same as `stack-one`, only this time our input is passed as an environment variable.
