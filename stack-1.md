@@ -71,7 +71,7 @@ Getting closer! changeme is currently 0x62596c49, we want 0x496c5962
 ```
 Byte order is important, the value interpreted for `changeme` hints this system is `little-endian` - meaning the LSB (least-significant-byte) is first in memory.
 
-![](/images/stack-one/0.png)
+![](/images/stack-1/0.png)
 > Notice endianness only affects the layout of multi-byte representations like integers and some string encodings (like `UTF-16`).
 
 We can verify this using the program `lscpu`, it displays CPU architecture information, among it is byte order.
