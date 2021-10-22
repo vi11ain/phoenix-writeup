@@ -56,7 +56,7 @@ Just like in `stack-zero`:
 * We need to change the value of `locals.changeme`
 * We have a vulnerable function (`strcpy()`) acting on `locals.buffer`
 
-This time we want a specific value in `locals.changeme` = `0x496c5962`.
+This time we want a specific value in `locals.changeme` = `0x496c5962` and our input is passed through the program's arguments.
 
 ### The Plan
 `strcpy()` does not receive a length of chars to write, instead it copies from a source buffer to a dest buffer until it encounters a terminating null byte (it includes the byte).
