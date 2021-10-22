@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
 The aim is to change the contents of the changeme variable to 0x0d0a090a
 
 ## Solution
-Same as `stack-one`, only this time our input is passed through an environment variable.
+Same as `stack-one`, only this time our input is passed as an environment variable.
 
 ### The Plan
 Set the environment variable `ExploitEducation` to a string overflowing `locals.buffer` and writing the `little-endian` representation of `0x0d0a090a` to `locals.changeme`.
