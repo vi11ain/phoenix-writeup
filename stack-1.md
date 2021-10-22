@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
 ```
 
 ## Challenge
-The aim is to change the contents of the changeme variable to `0x496c5962`.
+The aim is to change the contents of the `changeme` variable to `0x496c5962`.
 
 ## Solution
 Just like in `stack-zero`:
