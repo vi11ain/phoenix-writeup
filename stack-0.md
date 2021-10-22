@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
 ```
 > For those unfamiliar with the `volatile` keyword, it tells the compiler not to run optimizations on the integer `changeme`.
 ## Challenge
-The aim is to change the contents of the changeme variable.
+The aim is to change the contents of the `changeme` variable.
 
 ## Solution
 ### Dry Run
